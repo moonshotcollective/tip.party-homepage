@@ -1,81 +1,155 @@
 import Head from 'next/head'
+import classnames from 'classnames'
+import Icon from '../assets/icon.svg'
+import Gitcoin from '../assets/gitcoin.svg'
+import Github from '../assets/github.svg'
+import Meta from '../components/meta'
 
 export default function Home() {
+  const containerStyles = 'container mt-16 sm:mt-24 px-4 sm:px-0 w-full mx-auto'
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <Meta />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <main className={classnames(containerStyles)}>
+        <header className="flex flex-1 flex-col sm:flex-row py-10 sm:py-20">
+          <div className="flex flex-1 flex-col items-start justify-between">
+            <div className="mb-10 sm:mb-0">
+              <div className="flex flex-row">
+                <h1 className="text-5xl text-moon">Tip Party</h1>
+                <div className="ml-3">
+                  <Icon />
+                </div>
+              </div>
+              <h2 className="text-2xl italic mt-4 text-violet">
+                by <span className="font-bold">MOONSHOT COLLECTIVE</span>
+              </h2>
+            </div>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
+            {/* Mobile-only video */}
+            <div className="sm:hidden flex flex-1 sm:mb-0 shadow-md border border-violet-dark mb-8">
+              <video width="100%" controls>
+                <source src="/assets/moonshot-tip-party-intro.mp4" type="video/mp4"></source>
+              </video>
+            </div>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
+            {/* Description Text */}
+            <div className="mb-10 sm:mb-0">
+              <p className="poppins text-2xl text-elder leading-relaxed">
+                Send tips to multiple members of your <br />
+                community at once with a Tip Party.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <a href="https://app.tip.party/" className="rounded-full poppins bg-violet text-white py-5 px-14">
+              <span className="text-xl font-light">Launch App</span>
+            </a>
+          </div>
+          <div className="hidden sm:flex flex-1">
+            <video width="100%" controls>
+              <source src="/assets/moonshot-tip-party-intro.mp4" type="video/mp4"></source>
+            </video>
+          </div>
+        </header>
+
+        {/* Steps */}
+        <section className="flex w-full flex-col py-20 pb-28 border-t border-violet-dark">
+          <h2 className="text-3xl text-moon mb-8">How It Works</h2>
+
+          <div className="w-full grid grid-flow-row sm:grid-flow-col gap-4 poppins text-xl text-center text-elder">
+            <div className="rounded-sm border border-violet-dark">
+              <img src="/assets/1.png" className="w-8 h-8 mb-2 m-2 absolute" alt="Create a tip room" />
+              <div className="flex flex-col items-center justify-center min-h-features">Create a Tip Room</div>
+            </div>
+
+            <div className="rounded-sm border border-violet-dark">
+              <img src="/assets/2.png" className="w-8 h-8 mb-2 m-2 absolute" alt="Invite people" />
+              <div className="flex flex-col items-center justify-center min-h-features">
+                Invite people to join
+                <br /> your Tip Room
+              </div>
+            </div>
+
+            <div className="rounded-sm border border-violet-dark">
+              <img src="/assets/3.png" className="w-8 h-8 mb-2 m-2 absolute" alt="start tipping" />
+              <div className="flex flex-col items-center justify-center min-h-features">Let the Tip party begin!</div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="flex w-full flex-col py-20 sm:pb-20 pb-8 border-t border-violet-dark">
+          <h2 className="text-3xl text-moon mb-3">FAQs</h2>
+
+          {/* Question: 1 */}
+          <div className="flex flex-col w-full text-xl poppins my-8">
+            <h3 className="text-violet">Why did you build Tip.Party?</h3>
+            <p className="mt-5 text-elder">
+              The Moonshot Collective built it because we wanted to use it ourselves. We have many community members
+              from across the Ethereum ecosystem, and wanted a universal way to reward engagement in the Collective.
             </p>
-          </a>
+          </div>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
+          {/* Question: 2 */}
+          <div className="flex flex-col w-full text-xl poppins my-8">
+            <h3 className="text-violet">I want to use Tip.Party for my own community. Is that cool?</h3>
+            <p className="mt-5 text-elder">
+              Yes aboslutely, please go ahead. After you do, let us know what you think.
             </p>
-          </a>
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
+          {/* Question: 3 */}
+          <div className="flex flex-col w-full text-xl poppins my-8">
+            <h3 className="text-violet">
+              Where does the 0.1 ETH to ‘become a distributor’ go? Why would I want to pay that?
+            </h3>
+            <p className="mt-5 text-elder">
+              You can host your own Tip.Party once you pay the 0.1 ETH fee! All funding goes to funding public goods on
+              Gitcoin Grants.
             </p>
-          </a>
+          </div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
+          {/* Question: 3 */}
+          <div className="flex flex-col w-full text-xl poppins my-8">
+            <h3 className="text-violet">How can I get in touch?</h3>
+            <p className="mt-5 text-elder">
+              Join our telegram{' '}
+              <a
+                className="text-white text-lg"
+                href="https://t.me/joinchat/LiCUTmU5-IUyYWZh"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+              </a>
+              .
             </p>
-          </a>
-        </div>
+          </div>
+        </section>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
+      <footer
+        className={classnames(
+          containerStyles,
+          'mt-0 mb-8 sm:mb-20 px-4 sm:px-0 flex flex-row justify-between py-6 sm:py-10 border-t border-violet-dark'
+        )}
+      >
+        <div className="flex poppins text-elder text-xl">
+          <a className="flex flex-row items-center" href="https://gitcoin.co" target="_blank" rel="noopener noreferrer">
+            <Gitcoin />
+            <span className="ml-2 sm:ml-4">Built by the Gitcoin community</span>
+          </a>
+        </div>
+
+        <div className="flex">
+          <a href="https://github.com/moonshotcollective" target="_blank" rel="noopener noreferrer">
+            <Github />
+          </a>
+        </div>
       </footer>
     </div>
   )
