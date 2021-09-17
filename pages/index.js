@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import Icon from '../assets/icon.svg'
 import Gitcoin from '../assets/gitcoin.svg'
 import Github from '../assets/github.svg'
-import Meta from '../components/meta'
+import Meta from '../components/Meta'
 
 export default function Home() {
   const containerStyles = 'container mt-16 sm:mt-24 px-4 sm:px-0 w-full mx-auto'
