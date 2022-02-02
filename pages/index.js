@@ -162,7 +162,7 @@ export default function Home() {
           </div>
 
           {/* Question: 5 */}
-          <div className="flex flex-col w-full text-xl poppins my-8">
+          {/* <div className="flex flex-col w-full text-xl poppins my-8">
             <h3 className="text-violet">
               Where does the 0.01 ETH to ‘become a distributor’ go? Why would I
               want to pay that?
@@ -171,7 +171,7 @@ export default function Home() {
               You can host your own Tip.Party once you pay the 0.01 ETH fee! All
               funding goes to funding public goods on Gitcoin Grants.
             </p>
-          </div>
+          </div> */}
 
           {/* Question: 6 */}
           <div className="flex flex-col w-full text-xl poppins my-8">
